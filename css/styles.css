@@ -8,7 +8,7 @@
     width: 200px;
     margin: 20px auto;
     border-style: solid;
-    animation: fadeIn2 1s;
+    animation: fadeIn2 0.5s;
 }
 #GameScreen {
     border-style: solid;
@@ -60,6 +60,6 @@
 }
 @keyframes fadeIn2 {
     0% {opacity: 0;}
-    50% {opacity: 0.1;}
-    100% {opacity: 1S;}
+    50% {opacity: 0.01;}
+    100% {opacity: 1;}
 }

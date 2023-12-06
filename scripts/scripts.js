@@ -127,7 +127,7 @@ OptText[33] = ["I'm ready"];
 AdvText[34] = "The truth is that there's no plot twist, this is a fictional story, it's a text adventure...";
 OptText[34] = ["Angrily grab the device and press the button"];
 
-AdvText[35] = "You press the button, feel a sudden heat surrounding you, finally, feel the sunlight on your face <br>"+
+AdvText[35] = "You press the button, feel a sudden heat surrounding you, and finally, feel the sunlight on your face <br>"+
 "you have escaped the mysterious place, but it feels like you've forgotten something";
 OptText[35] = ["Retry for a better ending?"];
 
@@ -278,6 +278,9 @@ $(document).ready(function() {
             case 18: {
                 if (option == 1) {
                     id = 19;
+                    if (!key) {
+                        ImgN = 10;
+                    } 
                 } else if (option == 2) {
                     id = 27;
                 } else if (option == 3) {
@@ -287,6 +290,7 @@ $(document).ready(function() {
             case 19: {
                 id = 18;
                 key = true;
+                ImgN = 0;
             } break;
             case 20: {
                 if (option == 1) {
@@ -321,6 +325,7 @@ $(document).ready(function() {
             } break;
             case 25: {
                 id = 26;
+                ImgN = 9
             } break;
             case 26: {
                 id = 0;
@@ -350,10 +355,12 @@ $(document).ready(function() {
                     id = 33;
                 } else if (option == 2) {
                     id = 35;
+                    ImgN = 8;
                 }
             } break;
             case 33: {
                 id = 34;
+                ImgN = 8;
             } break;
             case 34: {
                 id = 35;
@@ -376,6 +383,6 @@ $(document).ready(function() {
         for (var i = 0; i < OptText[id].length; i++) {
             $("#GameScreen").append("<div class='Options'>" + (String(i + 1)) + ") " + OptText[id][i] + "</div>");
         }
-        $("#GameScreen").append("<div class = 'imagestuff'>"+"<img class = 'image' src= images/"+ImageList[ImgN]+".png>"+"</div>");
+        $("#GameScreen").append("<div class = 'imagestuff'>"+"<img class = 'image' alt='these sprites are very simple and bad' src= images/"+ImageList[ImgN]+".png>"+"</div>");
     });
 });
